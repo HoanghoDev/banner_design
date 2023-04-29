@@ -1,0 +1,85 @@
+:root{
+    --dark: #19283B;
+    --light: #B8B9C1;
+}
+body{
+    margin: 0;
+    font-size: 15px;
+    font-family: Poppins;
+}
+nav{
+    width: 80%; 
+    margin: auto;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    list-style: none;
+}
+nav ul li{
+    margin-left: 50px;
+    font-weight: 500;
+}
+nav ul li.active{
+    color: var(--light);
+}
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.banner{
+    height: 100vh;
+    position: relative;
+    background-image: conic-gradient(
+        from var(--rotate), var(--dark), var(--light) 60%
+    );
+    margin-top: -50px;
+    z-index: -1;
+    animation: rotateAnimation 6s linear infinite;
+}
+@keyframes rotateAnimation{
+    from{
+        --rotate: 0deg;
+    }to{
+        --rotate: -360deg;
+    }
+}
+.banner .content{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 33%;
+}
+.banner h1{
+    margin: 0;
+    font-weight: 500;
+    font-size: xxx-large;
+}
+.banner button{
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: var(--light);
+    font-weight: bold;
+}
+.statis{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--light);
+}
+.statis p:nth-child(1){
+    font-size: x-large;
+}
+.statis p:nth-child(2){
+    font-size: xxx-large;
+    font-weight: bold;
+}
+
